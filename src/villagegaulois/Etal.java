@@ -1,10 +1,11 @@
 package villagegaulois;
 
 import personnages.Gaulois;
+import produit.*;
 
 public class Etal {
 	private Gaulois vendeur;
-	private String produit;
+	private Produit produit;
 	private int quantiteDebutMarche;
 	private int quantite;
 	private boolean etalOccupe = false;
@@ -21,11 +22,11 @@ public class Etal {
 		return quantite;
 	}
 
-	public String getProduit() {
+	public Produit getProduit() {
 		return produit;
 	}
 
-	public void occuperEtal(Gaulois vendeur, String produit, int quantite) {
+	public void occuperEtal(Gaulois vendeur, Produit produit, int quantite) {
 		this.vendeur = vendeur;
 		this.produit = produit;
 		this.quantite = quantite;
@@ -67,11 +68,18 @@ public class Etal {
 		donneesVente[0] = String.valueOf(etalOccupe);
 		if (etalOccupe) {
 			donneesVente[1] = vendeur.getNom();
-			donneesVente[2] = produit;
+			donneesVente[2] = produit.toString();
 			donneesVente[3] = String.valueOf(quantiteDebutMarche);
 			donneesVente[4] = String.valueOf(quantiteDebutMarche - quantite);
 		}
 		return donneesVente;
+	}
+	
+	public void etalPoisson() {
+		
+	}
+	
+	public void etalSanglier() {
 	}
 
 }
